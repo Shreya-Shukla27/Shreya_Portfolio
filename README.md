@@ -1,5 +1,4 @@
 # Shreya Shukla - Portfolio
-![Uploading image.png…]()
 
 
 Welcome to my personal portfolio website.
