@@ -127,34 +127,6 @@ Notes:
 |-- tailwind.config.js
 `-- vite.config.js
 
-## GitHub push guide
-
-If this is your first push from this folder:
-
-1. Initialize Git:
-
-   git init
-
-2. Create main branch:
-
-   git branch -M main
-
-3. Add files:
-
-   git add .
-
-4. Commit:
-
-   git commit -m "chore: initialize production-ready portfolio repository"
-
-5. Add remote:
-
-   git remote add origin https://github.com/<your-username>/<your-repo>.git
-
-6. Push:
-
-   git push -u origin main
-
 ## Deployment (GitHub Pages)
 
 This repository includes automatic deployment via GitHub Actions.
