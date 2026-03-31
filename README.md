@@ -1,143 +1,32 @@
-# Shreya Shukla Portfolio
+# Shreya Shukla - Portfolio
 
-Production-ready personal portfolio website built with React, Vite, Tailwind CSS, and Framer Motion.
+Welcome to my personal portfolio website.
 
-## Live website
+## 🔗 Live Demo
 
-https://shreya-shukla27.github.io/Shreya_Portfolio/
+Check out the website here: [shreya-shukla27.github.io/Shreya_Portfolio](https://shreya-shukla27.github.io/Shreya_Portfolio/)
 
-## Live sections
+## 🚀 Tech Stack
 
-- Hero
-- About
-- Skills
-- Projects
-- Experience
-- Awards
-- Research
-- Contact
+- Frontend: React.js
+- Styling: Tailwind CSS
+- Animations: Framer Motion
+- Build Tool: Vite
 
-## Tech stack
+## 🎨 Features
 
-- React 19
-- Vite 8
-- Tailwind CSS 3
-- Framer Motion
-- Lucide React
-- React Icons
-- ESLint 9
+- 👋 Hero section with a dynamic intro and photo
+- 🛠️ Skills section showcasing technologies and tools
+- 📈 Coding profile highlights and social links
+- 📂 Projects section with live demos and code links
+- 🏆 Experience and achievements timeline
+- ✉️ Contact form with a friendly "Let's Connect" layout
+- 🖱️ Custom animated cursor and smooth scrolling behavior
+- 🌙 Dark-themed modern UI with expressive accent gradients
 
-## Local development
+## 💡 Inspiration
 
-Prerequisites:
+This portfolio was built to reflect my personality, technical skill set, and creativity in one place.
+It is a constant work in progress, just like every developer's journey.
 
-- Node.js 20+
-- npm 10+
-
-Setup:
-
-1. Install dependencies:
-
-   npm ci
-
-2. Start development server:
-
-   npm run dev
-
-3. Build production bundle:
-
-   npm run build
-
-4. Preview production build:
-
-   npm run preview
-
-5. Run quality checks:
-
-   npm run check
-
-## Environment variables
-
-Create a local env file for contact form integration:
-
-- File: .env.local
-- Variable: VITE_FORMSPREE_ENDPOINT
-
-Example:
-
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
-
-Notes:
-
-- .env.local is ignored by Git.
-- Use .env.example as a template only.
-
-## Project structure
-
-.
-|-- .github/
-| `-- workflows/
-|       |-- ci.yml
-|       `-- deploy-pages.yml
-|-- public/
-| |-- favicon.svg
-| `-- Shreya_Shukla_Resume.pdf
-|-- src/
-|   |-- assets/
-|   |   `-- photo.jpg
-| |-- components/
-| | |-- layout/
-| | | |-- Footer.jsx
-| | | `-- Navbar.jsx
-|   |   |-- sections/
-|   |   |   |-- About.jsx
-|   |   |   |-- Achievements.jsx
-|   |   |   |-- Contact.jsx
-|   |   |   |-- Experience.jsx
-|   |   |   |-- Hero.jsx
-|   |   |   |-- Projects.jsx
-|   |   |   |-- Publications.jsx
-|   |   |   `-- TechStack.jsx
-| | `-- ui/
-|   |       |-- Cursor.jsx
-|   |       `-- Loader.jsx
-| |-- constants/
-| | |-- data.js
-| | `-- motion.js
-|   |-- hooks/
-|   |   `-- index.js
-| |-- pages/
-| | `-- Home.jsx
-|   |-- styles/
-|   |   `-- globals.css
-| |-- App.jsx
-| |-- index.css
-| `-- main.jsx
-|-- .editorconfig
-|-- .env.example
-|-- .gitattributes
-|-- .gitignore
-|-- CONTRIBUTING.md
-|-- eslint.config.js
-|-- index.html
-|-- LICENSE
-|-- package-lock.json
-|-- package.json
-|-- postcss.config.js
-|-- tailwind.config.js
-`-- vite.config.js
-
-## Deployment (GitHub Pages)
-
-This repository includes automatic deployment via GitHub Actions.
-
-1. Push to main.
-2. In GitHub repository settings, open Pages.
-3. Set Source to GitHub Actions.
-4. Wait for Deploy GitHub Pages workflow to complete.
-
-Vite base path is auto-handled for GitHub Actions deployments via vite.config.js.
-
-## License
-
-MIT
+Feel free to reach out for collaborations, internships, or just a coffee chat.
