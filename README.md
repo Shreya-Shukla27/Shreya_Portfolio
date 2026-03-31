@@ -2,6 +2,10 @@
 
 Production-ready personal portfolio website built with React, Vite, Tailwind CSS, and Framer Motion.
 
+## Live website
+
+https://shreya-shukla27.github.io/Shreya_Portfolio/
+
 ## Live sections
 
 - Hero
