@@ -15,7 +15,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  pages-not-enabled:
+    if: ${{ github.event.repository.has_pages != true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pages setup required
+        run: echo "Enable GitHub Pages in Settings > Pages and set Build and deployment source to GitHub Actions. Then re-run this workflow."
+
   build:
+    if: ${{ github.event.repository.has_pages == true }}
     runs-on: ubuntu-latest
 
     steps:
@@ -47,6 +56,7 @@ jobs:
           path: dist
 
   deploy:
+    if: ${{ github.event.repository.has_pages == true }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
