@@ -2,6 +2,13 @@
 
 Welcome to my personal portfolio website.
 
+<p align="center">
+	<img src="https://i.postimg.cc/wjsfWqSV/Screenshot-2026-04-01-013751.png" alt="Portfolio Preview" width="100%" />
+</p>
+<p align="center">
+	<em>Landing page preview of my portfolio website.</em>
+</p>
+
 ## 🔗 Live Demo
 
 Check out the website here: [shreya-shukla27.github.io/Shreya_Portfolio](https://shreya-shukla27.github.io/Shreya_Portfolio/)
