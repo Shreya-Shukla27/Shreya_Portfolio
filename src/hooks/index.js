@@ -449,16 +449,17 @@ export function useNeko() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const hasAnyHoverPointer = window.matchMedia('(any-hover: hover)').matches;
 
-    if (!hasFinePointer || prefersReducedMotion) return;
+    if ((!hasFinePointer && !hasAnyHoverPointer) || prefersReducedMotion) return;
 
     let onekoElement = document.getElementById('oneko');
 
     if (!onekoElement) {
       neko({
         speed: 4.3,
-        width: 40,
-        height: 40,
+        width: '40px',
+        height: '40px',
         x: window.innerWidth * 0.48,
         y: window.innerHeight * 0.42,
       });
@@ -468,6 +469,8 @@ export function useNeko() {
     if (!onekoElement) return;
 
     onekoElement.style.pointerEvents = 'none';
+    onekoElement.style.display = 'block';
+    onekoElement.style.visibility = 'visible';
     onekoElement.style.opacity = '1';
 
     const onLeave = () => {
@@ -487,6 +490,8 @@ export function useNeko() {
 
       if (onekoElement) {
         onekoElement.style.pointerEvents = 'none';
+        onekoElement.style.display = '';
+        onekoElement.style.visibility = '';
         onekoElement.style.opacity = '';
       }
     };
