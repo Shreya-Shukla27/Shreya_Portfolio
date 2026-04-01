@@ -38,8 +38,13 @@ export default function Navbar() {
             : 'py-[22px] px-[52px] max-[960px]:py-[16px] max-[960px]:px-[24px]'
         }`}
       >
-        <a href="#hero" className="font-['Instrument_Serif',Georgia,serif] text-[22px] italic text-[var(--text)] no-underline tracking-[-0.02em]">
-          Shreya<span className="text-[var(--accent)]">.</span>
+        <a href="#hero" className="group inline-flex flex-col items-start no-underline leading-none">
+          <span className="font-['Instrument_Serif',Georgia,serif] text-[22px] italic text-[var(--text)] tracking-[-0.02em] transition-colors duration-200 group-hover:text-white">
+            Shreya<span className="text-[var(--accent)]">.</span>
+          </span>
+          <span className="mt-[3px] text-[9px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)] transition-colors duration-200 group-hover:text-[var(--accent)] max-[960px]:hidden">
+            Ideas / Impact
+          </span>
         </a>
 
         <ul className="flex gap-[36px] list-none max-[960px]:hidden">

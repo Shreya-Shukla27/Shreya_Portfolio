@@ -29,9 +29,15 @@ function handleCardMouseLeave(e) {
 }
 
 function ActionButtons({ links }) {
+  const visibleLinks = links.filter((link) => link?.href && link.href !== "#");
+
+  if (!visibleLinks.length) {
+    return null;
+  }
+
   return (
     <div className="flex flex-wrap gap-[10px] mt-auto">
-      {links.map((link, index) => {
+      {visibleLinks.map((link, index) => {
         const isPrimary = link.type === "primary";
         const isExternal = link.href.startsWith("http");
         return (

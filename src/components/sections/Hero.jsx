@@ -79,8 +79,13 @@ export default function Hero() {
         <div className="relative w-[320px] h-[400px] shrink-0 max-[960px]:w-[200px] max-[960px]:h-[200px] max-[960px]:mx-auto reveal reveal-delay-2">
           <div className="absolute -inset-[22px] rounded-[50%_50%_50%_50%/60%_60%_40%_40%] border border-solid border-[rgba(245,102,184,0.12)] animate-[ringPulse_4s_ease-in-out_infinite_1.2s]" />
           <div className="absolute -inset-[11px] rounded-[50%_50%_50%_50%/60%_60%_40%_40%] border-[1.5px] border-solid border-[rgba(217,102,245,0.28)] animate-[ringPulse_4s_ease-in-out_infinite]" />
-          <img src={HERO_PHOTO_URL} alt="Shreya Shukla" className="w-full h-full object-cover object-top rounded-[50%_50%_50%_50%/60%_60%_40%_40%] border-[2px] border-solid border-[rgba(217,102,245,0.2)] saturate-[1.05] contrast-[1.02] block" />
-          <div className="absolute inset-0 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-[radial-gradient(ellipse_at_60%_35%,rgba(217,102,245,0.18)_0%,transparent_65%)] pointer-events-none" />
+          <div className="absolute -inset-[16px] rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-[radial-gradient(circle,rgba(245,102,184,0.2)_0%,rgba(217,102,245,0.08)_38%,transparent_72%)] blur-[18px] pointer-events-none animate-[heroCuteGlow_3.2s_ease-in-out_infinite]" />
+          <div className="relative w-full h-full animate-[heroCuteFloat_4.2s_cubic-bezier(0.16,1,0.3,1)_infinite]">
+            <img src={HERO_PHOTO_URL} alt="Shreya Shukla" className="w-full h-full object-cover object-top rounded-[50%_50%_50%_50%/60%_60%_40%_40%] border-[2px] border-solid border-[rgba(217,102,245,0.2)] saturate-[1.05] contrast-[1.02] block" />
+            <div className="absolute inset-0 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-[radial-gradient(ellipse_at_60%_35%,rgba(217,102,245,0.18)_0%,transparent_65%)] pointer-events-none" />
+          </div>
+          <div className="absolute -top-[8px] right-[30px] w-[10px] h-[10px] rounded-full bg-[rgba(245,102,184,0.92)] shadow-[0_0_14px_rgba(245,102,184,0.62)] pointer-events-none animate-[heroTwinkle_2.3s_ease-in-out_infinite]" />
+          <div className="absolute bottom-[58px] -left-[3px] w-[8px] h-[8px] rounded-full bg-[rgba(217,102,245,0.88)] shadow-[0_0_12px_rgba(217,102,245,0.58)] pointer-events-none animate-[heroTwinkle_2.3s_ease-in-out_infinite_1.1s]" />
         </div>
       </div>
     </div>

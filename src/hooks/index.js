@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { neko } from 'onekojs';
 
 // ─── useNavScroll ───
 export function useNavScroll() {
@@ -262,6 +263,9 @@ export function useCursor() {
   useEffect(() => {
     const dot = document.getElementById('c-dot');
     const ring = document.getElementById('c-ring');
+    const spotlight = document.getElementById('cursor-spotlight');
+    const trail = document.getElementById('cursor-trail');
+    const trailDots = trail ? Array.from(trail.querySelectorAll('.cursor-trail-dot')) : [];
     if (!dot || !ring) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -271,16 +275,22 @@ export function useCursor() {
       document.body.style.cursor = 'auto';
       dot.style.display = 'none';
       ring.style.display = 'none';
+      if (spotlight) spotlight.style.display = 'none';
+      if (trail) trail.style.display = 'none';
       return () => {
         document.body.style.cursor = '';
         dot.style.display = '';
         ring.style.display = '';
+        if (spotlight) spotlight.style.display = '';
+        if (trail) trail.style.display = '';
       };
     }
 
     document.body.style.cursor = 'none';
     dot.style.display = '';
     ring.style.display = '';
+    if (spotlight) spotlight.style.display = '';
+    if (trail) trail.style.display = '';
 
     let mx = window.innerWidth * 0.5;
     let my = window.innerHeight * 0.5;
@@ -288,8 +298,11 @@ export function useCursor() {
     let dotY = my;
     let ringX = mx;
     let ringY = my;
+    let spotX = mx;
+    let spotY = my;
     let isHovering = false;
     let raf;
+    const trailPoints = trailDots.map(() => ({ x: mx, y: my }));
     const interactiveSelector = 'a, button, [role="button"], input, textarea, select, [data-mag], [tabindex]:not([tabindex="-1"])';
 
     const setHoverStyles = (hovering) => {
@@ -308,6 +321,10 @@ export function useCursor() {
         dot.style.width = '7px';
         dot.style.height = '7px';
       }
+
+      if (spotlight) {
+        spotlight.classList.toggle('interactive', hovering);
+      }
     };
 
     setHoverStyles(false);
@@ -322,6 +339,32 @@ export function useCursor() {
       dot.style.top = `${dotY}px`;
       ring.style.left = `${ringX}px`;
       ring.style.top = `${ringY}px`;
+
+      if (spotlight) {
+        spotX += (mx - spotX) * 0.11;
+        spotY += (my - spotY) * 0.11;
+        spotlight.style.left = `${spotX}px`;
+        spotlight.style.top = `${spotY}px`;
+      }
+
+      if (trailDots.length) {
+        let leadX = dotX;
+        let leadY = dotY;
+
+        trailDots.forEach((trailDot, index) => {
+          const trailPoint = trailPoints[index];
+          const easing = Math.max(0.08, 0.28 - index * 0.015);
+
+          trailPoint.x += (leadX - trailPoint.x) * easing;
+          trailPoint.y += (leadY - trailPoint.y) * easing;
+
+          trailDot.style.left = `${trailPoint.x}px`;
+          trailDot.style.top = `${trailPoint.y}px`;
+
+          leadX = trailPoint.x;
+          leadY = trailPoint.y;
+        });
+      }
 
       raf = requestAnimationFrame(animate);
     };
@@ -346,10 +389,14 @@ export function useCursor() {
     const onLeave = () => {
       dot.style.opacity = '0';
       ring.style.opacity = '0';
+      if (spotlight) spotlight.style.opacity = '0';
+      if (trail) trail.style.opacity = '0';
     };
     const onEnter = () => {
       dot.style.opacity = '1';
       ring.style.opacity = '1';
+      if (spotlight) spotlight.style.opacity = '';
+      if (trail) trail.style.opacity = '';
     };
 
     document.addEventListener('mousemove', onMove);
@@ -378,9 +425,72 @@ export function useCursor() {
       ring.style.height = '';
       ring.style.borderColor = '';
       ring.style.background = '';
+      if (spotlight) {
+        spotlight.classList.remove('interactive');
+        spotlight.style.display = '';
+        spotlight.style.left = '';
+        spotlight.style.top = '';
+        spotlight.style.opacity = '';
+      }
+      if (trail) {
+        trail.style.display = '';
+        trail.style.opacity = '';
+      }
+      trailDots.forEach((trailDot) => {
+        trailDot.style.left = '';
+        trailDot.style.top = '';
+      });
     };
   }, []);
 
+}
+
+export function useNeko() {
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (!hasFinePointer || prefersReducedMotion) return;
+
+    let onekoElement = document.getElementById('oneko');
+
+    if (!onekoElement) {
+      neko({
+        speed: 4.3,
+        width: 40,
+        height: 40,
+        x: window.innerWidth * 0.48,
+        y: window.innerHeight * 0.42,
+      });
+      onekoElement = document.getElementById('oneko');
+    }
+
+    if (!onekoElement) return;
+
+    onekoElement.style.pointerEvents = 'none';
+    onekoElement.style.opacity = '1';
+
+    const onLeave = () => {
+      onekoElement.style.opacity = '0.45';
+    };
+
+    const onEnter = () => {
+      onekoElement.style.opacity = '1';
+    };
+
+    document.addEventListener('mouseleave', onLeave);
+    document.addEventListener('mouseenter', onEnter);
+
+    return () => {
+      document.removeEventListener('mouseleave', onLeave);
+      document.removeEventListener('mouseenter', onEnter);
+
+      if (onekoElement) {
+        onekoElement.style.pointerEvents = 'none';
+        onekoElement.style.opacity = '';
+      }
+    };
+  }, []);
 }
 
 // ─── helper functions ───

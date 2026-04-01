@@ -33,3 +33,4 @@ LICENSE
 .gitattributes
 .env.example
 .editorconfig
+neko/
