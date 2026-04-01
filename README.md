@@ -11,7 +11,7 @@ Welcome to my personal portfolio website.
 
 ## 🔗 Live Demo
 
-Check out the website here: [shreya-shukla27.github.io/Shreya_Portfolio](https://shreya-shuk.vercel.app/)
+Check out the website here: [https://shreya-shuk.vercel.app/](https://shreya-shuk.vercel.app/)
 
 ## 🚀 Tech Stack
 
