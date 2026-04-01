@@ -458,8 +458,8 @@ export function useNeko() {
     if (!onekoElement) {
       neko({
         speed: 4.3,
-        width: '40px',
-        height: '40px',
+        width: '32px',
+        height: '32px',
         x: window.innerWidth * 0.48,
         y: window.innerHeight * 0.42,
       });
