@@ -3,7 +3,7 @@ import { useTyping, useMagneticButtons } from '../../hooks';
 const HERO_NAME = 'Shreya Shukla';
 const HERO_ROLE = 'AI/ML Engineer & Data Scientist at Manipal University Jaipur.';
 const HERO_SUBTEXT = 'I build intelligent systems: from medical-grade deep learning to production GenAI pipelines.';
-const RESUME_URL = 'https://drive.google.com/file/d/1SQwoD2hpzPt28w3xHnuvkA-am5L68woB/view?usp=drive_link';
+const RESUME_URL = 'https://drive.google.com/file/d/1seiMEFZWpAdwWSTU2oe5-_r0NMC1jjVc/view';';
 const HERO_PHOTO_URL = 'https://i.postimg.cc/w3KCVZrc/photo.jpg';
 
 const TYPING_PHRASES = [
