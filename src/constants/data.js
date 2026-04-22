@@ -79,8 +79,8 @@ export const PROJECTS = {
       ],
       tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Hugging Face'],
       links: [
-        { label: 'View Project', href: '#', type: 'primary' },
-        { label: 'GitHub', href: 'https://github.com/Shreya-Shukla27', type: 'secondary' },
+        { label: 'View Project', href: 'https://lensai-image-caption-generator.vercel.app', type: 'primary' },
+        { label: 'GitHub', href: 'https://github.com/Shreya-Shukla27/lensai-image-caption-generator', type: 'secondary' },
       ],
     },
   ],
