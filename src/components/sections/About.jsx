@@ -5,21 +5,21 @@ const HERO_PHOTO_URL = 'https://i.postimg.cc/w3KCVZrc/photo.jpg';
 const ABOUT_CONTENT = {
   badge: 'Currently building GenAI & LLM systems at PwC India',
   intro:
-    'I am a B.Tech CSE (Data Science) student at Manipal University Jaipur (CGPA: 9.17), currently working as an AI & Cloud Application Development Trainee at PwC India.',
+    'I am a B.Tech CSE (Data Science) student at Manipal University Jaipur (CGPA: 9.25), currently working as an AI & Cloud Application Development Trainee at PwC India.',
   specialization:
     'I specialize in building LLM-powered systems, RAG pipelines, and scalable AI solutions for real-world applications. My work focuses on combining machine learning, deep learning, and generative AI to create systems that are not just intelligent, but production-ready.',
   stats: [
-    { num: '9.17', label: 'CGPA', target: 9.17, decimal: 2 },
+    { num: '9.25', label: 'CGPA', target: 9.25, decimal: 2 },
     { num: '2', label: 'Papers (Under Review)', target: 2, decimal: 0 },
     { num: '1', label: 'Patent Granted', target: 1, decimal: 0 },
     { num: 'AIC', label: 'Incubation Support', static: true },
   ],
 };
 
-const KEYWORD_PATTERN = /(GenAI|LLM|RAG|AI systems|Patent|95%\+|187\+)/g;
+const KEYWORD_PATTERN = /(GenAI|LLM|ML|AI systems|Patent|95%\+|187\+)/g;
 
 function renderKeywordHighlights(text) {
-  const highlightedTokens = ['genai', 'llm', 'rag', 'ai systems', 'patent', '95%+', '187+'];
+  const highlightedTokens = ['genai', 'llm', 'ml', 'ai systems', 'patent', '95%+', '187+'];
 
   return text.split(KEYWORD_PATTERN).map((part, index) => {
     if (highlightedTokens.includes(part.toLowerCase())) {
