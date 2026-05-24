@@ -40,6 +40,8 @@ function ActionButtons({ links }) {
       {visibleLinks.map((link, index) => {
         const isPrimary = link.type === "primary";
         const isExternal = link.href.startsWith("http");
+        const displayLabel = isPrimary && isExternal ? "Live" : link.label;
+
         return (
           <a
             key={index}
@@ -52,7 +54,24 @@ function ActionButtons({ links }) {
                 : "text-[var(--text)] border border-solid border-[rgba(217,102,245,0.3)] bg-[rgba(255,255,255,0.02)] hover:border-[rgba(217,102,245,0.55)] hover:bg-[rgba(217,102,245,0.1)] hover:-translate-y-[1px]"
             }`}
           >
-            {link.label}
+            <span>{displayLabel}</span>
+            {isExternal && (
+              <svg
+                className="ml-[8px] w-[12px] h-[12px]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            )}
           </a>
         );
       })}
