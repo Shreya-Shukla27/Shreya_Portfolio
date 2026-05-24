@@ -141,7 +141,7 @@ export const TECH_STACK = [
 
 export const EXPERIENCE = [
   {
-    period: 'Dec 2024 – Present',
+    period: 'Feb 2026 – Current',
     company: 'PwC India',
     companyClass: 'pwc',
     current: true,
@@ -156,7 +156,7 @@ export const EXPERIENCE = [
     tech: ['LangChain', 'Azure OpenAI', 'Python', 'FastAPI', 'Docker'],
   },
   {
-    period: 'Aug 2023 – Present',
+    period: 'April 2025 – June 2026',
     company: 'ANOVA MUJ',
     companyClass: 'anova',
     current: false,
