@@ -20,21 +20,21 @@ export const TICKER_ITEMS = [
 export const PROJECTS = {
   grid: [
     {
-      id: 'parkinsons-disease-prediction',
-      year: '2025',
-      title: 'Parkinson\'s Disease Prediction',
-      desc: 'Ensemble machine learning pipeline for Parkinson\'s prediction with robust validation and explainable feature analysis.',
-      metrics: [
-        { val: '95%+', label: 'Accuracy' },
-        { val: 'Cross-Validation', label: 'Validation' },
-        { val: 'Optimized', label: 'Hyperparameter Tuning' },
-      ],
-      tags: ['Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-      links: [
-        { label: 'View Project', href: 'https://github.com/Shreya-Shukla27/ML_projects/blob/main/Copy_of_Parkinsons.ipynb', type: 'primary' },
-        { label: 'GitHub', href: 'https://github.com/Shreya-Shukla27/ML_projects/blob/main/Copy_of_Parkinsons.ipynb', type: 'secondary' },
-      ],
-    },
+  id: 'codebase-atlas',
+  year: '2026',
+  title: 'Codebase Atlas',
+  desc: 'Full-stack app that visualizes any GitHub repo as an interactive galaxy — files as planets, imports as edges, with AI-powered architecture chat.',
+  metrics: [
+    { val: '4', label: 'Languages Parsed' },
+    { val: '3', label: 'View Modes' },
+    { val: 'Real-time', label: 'Galaxy Render' },
+  ],
+  tags: ['Next.js 14', 'FastAPI', 'React Flow', 'D3-Force', 'Claude AI', 'Python'],
+  links: [
+    { label: 'Live', href: 'https://atlas-ai-shreya27.vercel.app', type: 'primary' },
+    { label: 'GitHub', href: 'https://github.com/Shreya-Shukla27/codebase-atlas', type: 'secondary' },
+  ],
+},
     {
       id: 'pastel-diary',
       year: '2026',
