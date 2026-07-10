@@ -19,6 +19,7 @@ const MotionSpan = motion.span;
 const COMPANY_ICON_MAP = {
   pwc: Building2,
   anova: Crown,
+  morepen: Briefcase,
 };
 
 function isImpactToken(token) {
@@ -101,6 +102,8 @@ function ExperienceEntry({ exp, index }) {
                 ? 'text-[var(--accent)]'
                 : exp.companyClass === 'anova'
                 ? 'text-[var(--accent2)]'
+                : exp.companyClass === 'morepen'
+                ? 'text-[var(--accent)]'
                 : 'text-[var(--text)]'
             }`}
           >

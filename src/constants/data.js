@@ -156,6 +156,21 @@ export const EXPERIENCE = [
     tech: ['LangChain', 'Azure OpenAI', 'Python', 'FastAPI', 'Docker'],
   },
   {
+    period: 'June 2026 – July 2026',
+    company: 'Morepen Laboratories',
+    companyClass: 'morepen',
+    current: false,
+    badges: ['INTERNSHIP'],
+    role: 'IT Intern',
+    bullets: [
+      'Contributed to IT department operations by supporting technical and data-related tasks.',
+      'Assisted in data analysis and reporting activities using analytical tools.',
+      'Collaborated with team members to improve operational efficiency and business processes.',
+      'Demonstrated professionalism, diligence, and strong problem-solving skills while working in a corporate environment.',
+    ],
+    tech: ['Data Analysis', 'IT Operations', 'Reporting Tools'],
+  },
+  {
     period: 'April 2025 – June 2026',
     company: 'ANOVA MUJ',
     companyClass: 'anova',
